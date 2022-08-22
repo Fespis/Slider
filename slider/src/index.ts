@@ -14,8 +14,11 @@ function swapListItem() {
     if (currentItemNumber < 0) {
       currentItemNumber = items.length - 1;
     }
-    const currentItemWidth = items[currentItemNumber]?.scrollWidth;
-    list.style.marginRight = `${currentItemWidth * currentItemNumber}px`;
+    const currentItem = items[currentItemNumber] as HTMLElement;
+    const currentItemWidth = currentItem?.scrollWidth;
+    (items[0] as HTMLElement).style.marginLeft = `-${
+      currentItemWidth * currentItemNumber
+    }px`;
     list.style.backgroundColor = `${backgroundColors[currentItemNumber]}`;
   });
 
@@ -24,8 +27,11 @@ function swapListItem() {
     if (currentItemNumber > items.length - 1) {
       currentItemNumber = 0;
     }
-    const currentItemWidth = items[currentItemNumber]?.scrollWidth;
-    list.style.marginRight = `${currentItemWidth * currentItemNumber}px`;
+    const currentItem = items[currentItemNumber] as HTMLElement;
+    const currentItemWidth = currentItem?.scrollWidth;
+    (items[0] as HTMLElement).style.marginLeft = `-${
+      currentItemWidth * currentItemNumber
+    }px`;
     list.style.backgroundColor = `${backgroundColors[currentItemNumber]}`;
   });
 }
