@@ -4,10 +4,10 @@ const backgroundColors = [`#8dbdba`, `#8675ba`];
 
 function swapListItem() {
   let currentItemNumber = 0;
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
+  const prev = document.querySelector(".menu_buttons__prev");
+  const next = document.querySelector(".menu_buttons__next");
   const list = document.querySelector(".list") as HTMLElement;
-  const items = document.querySelectorAll(".list-item");
+  const items = document.querySelectorAll(".list_item");
 
   prev?.addEventListener("click", function () {
     currentItemNumber -= 1;
