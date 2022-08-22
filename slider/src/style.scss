@@ -1,1 +1,45 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
 
+.carousel {
+  width: 1440px;
+  height: 882px;
+  background-color: #eee;
+}
+
+.gallery {
+  width: 1440px;
+  height: 882px;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  height: 882px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  transition: 0.5s all ease-in;
+  background-color: #8dbdba;
+}
+
+.list-item {
+  width: 1440px;
+  height: 882px;
+}
+
+.green {
+  background-color: #8dbdba;
+}
+
+.purple {
+  background-color: #8675ba;
+}
