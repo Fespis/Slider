@@ -109,7 +109,7 @@ function swapListItem() {
   });
 }
 
-function a1() {
+function addSphereAnimation() {
   let spheres = document.querySelectorAll(".sphere");
   let spheresSecond = document.querySelector(".spheres-second") as HTMLElement;
 
@@ -123,7 +123,7 @@ function a1() {
   });
 }
 
-a1();
+addSphereAnimation();
 
 moveNewCursor();
 swapListItem();
