@@ -109,6 +109,9 @@ p {
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .menu_text {
@@ -119,6 +122,9 @@ p {
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .menu_buttons {
@@ -140,6 +146,9 @@ p {
   max-width: 598px;
   height: 94px;
   display: flex;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .menu_table__cell {
@@ -167,4 +176,52 @@ p {
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
+}
+
+@keyframes showElement {
+  0% {
+    opacity: 0;
+    position: relative;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    position: relative;
+    top: 0;
+  }
+}
+
+@keyframes hiddenElement {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animation_show-title {
+  animation-name: showElement;
+  animation-delay: 0.4s;
+}
+.animation_show-text {
+  animation-name: showElement;
+  animation-delay: 0.8s;
+}
+.animation_show-table {
+  animation-name: showElement;
+  animation-delay: 1.2s;
+}
+
+.animation_hidden-title {
+  animation-name: hiddenElement;
+  animation-delay: 0;
+}
+.animation_hidden-text {
+  animation-name: hiddenElement;
+  animation-delay: 0;
+}
+.animation_hidden-table {
+  animation-name: hiddenElement;
+  animation-delay: 0;
 }

@@ -26,6 +26,34 @@ function moveNewCursor() {
   });
 }
 
+function changeAnimationForText(prevItem: number, currentItem: number) {
+  const menuTitleAll = document.querySelectorAll(".menu_tittle");
+  const menuTextAll = document.querySelectorAll(".menu_text");
+  const menuTableAll = document.querySelectorAll(".menu_table");
+
+  const menuTitlePrev = menuTitleAll[prevItem] as HTMLElement;
+  const menuTitleCurrent = menuTitleAll[currentItem] as HTMLElement;
+  const menuTextPrev = menuTextAll[prevItem] as HTMLElement;
+  const menuTextCurrent = menuTextAll[currentItem] as HTMLElement;
+  const menuTablePrev = menuTableAll[prevItem] as HTMLElement;
+  const menuTableCurrent = menuTableAll[currentItem] as HTMLElement;
+
+  menuTitlePrev.classList.add("animation_hidden-title");
+  menuTitleCurrent.classList.add("animation_show-title");
+  menuTitlePrev.classList.remove("animation_show-title");
+  menuTitleCurrent.classList.remove("animation_hidden-title");
+
+  menuTextPrev.classList.add("animation_hidden-text");
+  menuTextCurrent.classList.add("animation_show-text");
+  menuTextPrev.classList.remove("animation_show-text");
+  menuTextCurrent.classList.remove("animation_hidden-text");
+
+  menuTablePrev.classList.add("animation_hidden-table");
+  menuTableCurrent.classList.add("animation_show-table");
+  menuTablePrev.classList.remove("animation_show-table");
+  menuTableCurrent.classList.remove("animation_hidden-table");
+}
+
 function swapListItem() {
   let currentItemNumber = 0;
   const backgroundColors = [`#8dbdba`, `#8675ba`];
@@ -42,6 +70,7 @@ function swapListItem() {
       reChangeCursor();
     });
     prevButton?.addEventListener("click", () => {
+      const prevItemNumber = currentItemNumber;
       currentItemNumber -= 1;
       if (currentItemNumber < 0) {
         currentItemNumber = items.length - 1;
@@ -52,6 +81,7 @@ function swapListItem() {
         currentItemWidth * currentItemNumber
       }px`;
       list.style.backgroundColor = `${backgroundColors[currentItemNumber]}`;
+      changeAnimationForText(prevItemNumber, currentItemNumber);
     });
   });
 
@@ -63,6 +93,7 @@ function swapListItem() {
       reChangeCursor();
     });
     nextButton?.addEventListener("click", () => {
+      const prevItemNumber = currentItemNumber;
       currentItemNumber += 1;
       if (currentItemNumber > items.length - 1) {
         currentItemNumber = 0;
@@ -73,6 +104,7 @@ function swapListItem() {
         currentItemWidth * currentItemNumber
       }px`;
       list.style.backgroundColor = `${backgroundColors[currentItemNumber]}`;
+      changeAnimationForText(prevItemNumber, currentItemNumber);
     });
   });
 }
