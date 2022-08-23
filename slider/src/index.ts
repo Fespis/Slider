@@ -124,6 +124,5 @@ function addSphereAnimation() {
 }
 
 addSphereAnimation();
-
 moveNewCursor();
 swapListItem();

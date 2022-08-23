@@ -1,1 +1,1 @@
-# slider
+# Deploy: https://taupe-khapse-da1318.netlify.app/
