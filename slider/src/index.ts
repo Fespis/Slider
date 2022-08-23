@@ -109,5 +109,21 @@ function swapListItem() {
   });
 }
 
+function a1() {
+  let spheres = document.querySelectorAll(".sphere");
+  let spheresSecond = document.querySelector(".spheres-second") as HTMLElement;
+
+  window.addEventListener("mousemove", function (e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;
+    spheres.forEach((sphere) => {
+      (sphere as HTMLElement).style.transform =
+        "translate(-" + x * 50 + "px, -" + y * 50 + "px)";
+    });
+  });
+}
+
+a1();
+
 moveNewCursor();
 swapListItem();
